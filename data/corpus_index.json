@@ -1,0 +1,404 @@
+[
+  {
+    "book_id": "book_16_05_2021_070111the_richest_man_in_babylon",
+    "title": "The Richest Man in Babylon",
+    "summary": "The Richest Man in Babylon by George S. Clason. Core Stance: Pro-thrift, gold-accumulation principles, pay-yourself-first 10% rule, anti-frivolous spending.. Target Audience: Beginners seeking timeless financial discipline and saving habits..",
+    "topic_tags": [
+      "budgeting",
+      "saving",
+      "debt",
+      "wealth accumulation",
+      "classics"
+    ],
+    "stance": "Pro-thrift, gold-accumulation principles, pay-yourself-first 10% rule, anti-frivolous spending.",
+    "audience": "Beginners seeking timeless financial discipline and saving habits.",
+    "total_pages": 163
+  },
+  {
+    "book_id": "book_a_random_walk_down_wall_street",
+    "title": "A Random Walk Down Wall Street",
+    "summary": "A Random Walk Down Wall Street by Burton G. Malkiel. Core Stance: Efficient Market Hypothesis (EMH), technical/fundamental analysis flaws, index fund superiority, life-cycle investing.. Target Audience: College students and investors studying academic finance vs practical market behavior..",
+    "topic_tags": [
+      "efficient markets",
+      "index funds",
+      "life-cycle investing",
+      "wall street"
+    ],
+    "stance": "Efficient Market Hypothesis (EMH), technical/fundamental analysis flaws, index fund superiority, life-cycle investing.",
+    "audience": "College students and investors studying academic finance vs practical market behavior.",
+    "total_pages": 370
+  },
+  {
+    "book_id": "book_behavioural_investing_a_practitioners_guide_to_applying_behavioural_finance_by_james_montier",
+    "title": "Behavioural Investing",
+    "summary": "Behavioural Investing by James Montier. Core Stance: Cognitive biases, overconfidence, loss aversion, emotional traps in financial markets, checklist-driven decision making.. Target Audience: Professional and retail investors seeking to eliminate emotional biases..",
+    "topic_tags": [
+      "behavioral finance",
+      "cognitive biases",
+      "psychology",
+      "risk management"
+    ],
+    "stance": "Cognitive biases, overconfidence, loss aversion, emotional traps in financial markets, checklist-driven decision making.",
+    "audience": "Professional and retail investors seeking to eliminate emotional biases.",
+    "total_pages": 720
+  },
+  {
+    "book_id": "book_broke_millennial_stop_scraping_erin_lowry",
+    "title": "Broke Millennial",
+    "summary": "Broke Millennial by Erin Lowry. Core Stance: Practical millennial money guide, relatable budget breakdown, transparent money talks with partners/friends.. Target Audience: Gen-Z & Millennials navigating student loans, budgeting, and entry-level salaries..",
+    "topic_tags": [
+      "budgeting",
+      "debt",
+      "millennials",
+      "credit scores",
+      "career"
+    ],
+    "stance": "Practical millennial money guide, relatable budget breakdown, transparent money talks with partners/friends.",
+    "audience": "Gen-Z & Millennials navigating student loans, budgeting, and entry-level salaries.",
+    "total_pages": 341
+  },
+  {
+    "book_id": "book_common_stocks_and_uncommon_profits_and_other_writings",
+    "title": "Common Stocks and Uncommon Profits",
+    "summary": "Common Stocks and Uncommon Profits by Philip A. Fisher. Core Stance: Growth investing, 15-point scuttlebutt method, evaluating management capability, holding high-growth category leaders.. Target Audience: Growth investors looking for long-term compounder businesses..",
+    "topic_tags": [
+      "growth investing",
+      "scuttlebutt",
+      "equity analysis",
+      "management evaluation"
+    ],
+    "stance": "Growth investing, 15-point scuttlebutt method, evaluating management capability, holding high-growth category leaders.",
+    "audience": "Growth investors looking for long-term compounder businesses.",
+    "total_pages": 317
+  },
+  {
+    "book_id": "book_financial_freedom_a_proven_pat_grant_sabatier",
+    "title": "Financial Freedom",
+    "summary": "Financial Freedom by Grant Sabatier. Core Stance: FIRE movement (Financial Independence Retire Early), side hustles, aggressive savings rate, fast-track index investing.. Target Audience: Ambitious savers seeking early retirement and income multiplication..",
+    "topic_tags": [
+      "FIRE",
+      "investing",
+      "side hussles",
+      "income generation",
+      "retirement"
+    ],
+    "stance": "FIRE movement (Financial Independence Retire Early), side hustles, aggressive savings rate, fast-track index investing.",
+    "audience": "Ambitious savers seeking early retirement and income multiplication.",
+    "total_pages": 346
+  },
+  {
+    "book_id": "book_i_will_teach_you_to_be_rich",
+    "title": "I Will Teach You To Be Rich",
+    "summary": "I Will Teach You To Be Rich by Ramit Sethi. Core Stance: Automated conscious spending, anti-frugality guilt (spend on what you love, cut ruthlessly on what you don't), high-yield banking & index funds.. Target Audience: Young professionals looking for automated systems without cutting out latte spending..",
+    "topic_tags": [
+      "conscious spending",
+      "automation",
+      "credit cards",
+      "investing",
+      "banking"
+    ],
+    "stance": "Automated conscious spending, anti-frugality guilt (spend on what you love, cut ruthlessly on what you don't), high-yield banking & index funds.",
+    "audience": "Young professionals looking for automated systems without cutting out latte spending.",
+    "total_pages": 317
+  },
+  {
+    "book_id": "book_latte_factor_pdf_chapter",
+    "title": "The Latte Factor",
+    "summary": "The Latte Factor by David Bach. Core Stance: Pay yourself first automatically, small daily savings compound into millions over time.. Target Audience: Anyone who feels they don't have enough money to start saving..",
+    "topic_tags": [
+      "micro-saving",
+      "automation",
+      "behavioral finance",
+      "compounding"
+    ],
+    "stance": "Pay yourself first automatically, small daily savings compound into millions over time.",
+    "audience": "Anyone who feels they don't have enough money to start saving.",
+    "total_pages": 37
+  },
+  {
+    "book_id": "book_little_book_of_common_sense_investing",
+    "title": "The Little Book of Common Sense Investing",
+    "summary": "The Little Book of Common Sense Investing by John C. Bogle. Core Stance: Strict low-cost index fund buy-and-hold investing, anti-active management, anti-high fees.. Target Audience: Long-term stock market investors seeking proven, low-cost asset allocation..",
+    "topic_tags": [
+      "index funds",
+      "investing",
+      "bogleheads",
+      "passive investing",
+      "stock market"
+    ],
+    "stance": "Strict low-cost index fund buy-and-hold investing, anti-active management, anti-high fees.",
+    "audience": "Long-term stock market investors seeking proven, low-cost asset allocation.",
+    "total_pages": 243
+  },
+  {
+    "book_id": "book_money_master_the_game",
+    "title": "Money: Master the Game",
+    "summary": "Money: Master the Game by Tony Robbins. Core Stance: 7-step blueprint, All-Weather portfolio (Ray Dalio style), asset protection, alternative wealth strategies.. Target Audience: Investors seeking institutional wealth secrets and asset protection..",
+    "topic_tags": [
+      "asset allocation",
+      "all-weather portfolio",
+      "wealth strategies",
+      "investing"
+    ],
+    "stance": "7-step blueprint, All-Weather portfolio (Ray Dalio style), asset protection, alternative wealth strategies.",
+    "audience": "Investors seeking institutional wealth secrets and asset protection.",
+    "total_pages": 674
+  },
+  {
+    "book_id": "book_one_up_on_wall_street_how_to_use_what_you_already_know_to_make_money_in_the_market",
+    "title": "One Up On Wall Street",
+    "summary": "One Up On Wall Street by Peter Lynch. Core Stance: Fundamental equity research, 'invest in what you know', ten-bagger stock picking based on local consumer insights.. Target Audience: Individual stock investors seeking a edge over Wall Street analysts..",
+    "topic_tags": [
+      "stock picking",
+      "equity research",
+      "value investing",
+      "stock market"
+    ],
+    "stance": "Fundamental equity research, 'invest in what you know', ten-bagger stock picking based on local consumer insights.",
+    "audience": "Individual stock investors seeking a edge over Wall Street analysts.",
+    "total_pages": 316
+  },
+  {
+    "book_id": "book_rich_dad_poor_dad",
+    "title": "Rich Dad Poor Dad",
+    "summary": "Rich Dad Poor Dad by Robert T. Kiyosaki. Core Stance: Assets vs liabilities, cashflow quadrants, financial literacy, leverage, tax efficiency, anti-traditional job dependency.. Target Audience: Anyone looking to shift from employee mindset to investor/business owner..",
+    "topic_tags": [
+      "cashflow",
+      "real estate",
+      "financial mindset",
+      "assets",
+      "entrepreneurship"
+    ],
+    "stance": "Assets vs liabilities, cashflow quadrants, financial literacy, leverage, tax efficiency, anti-traditional job dependency.",
+    "audience": "Anyone looking to shift from employee mindset to investor/business owner.",
+    "total_pages": 241
+  },
+  {
+    "book_id": "book_the_automatic_millionaire_by_david_bach",
+    "title": "The Automatic Millionaire",
+    "summary": "The Automatic Millionaire by David Bach. Core Stance: No budget needed \u2014 set up automated transfers to 401(k) / home ownership / pay yourself first automatically.. Target Audience: People who hate traditional budgeting and want a hands-off system..",
+    "topic_tags": [
+      "automation",
+      "home ownership",
+      "saving",
+      "retirement"
+    ],
+    "stance": "No budget needed \u2014 set up automated transfers to 401(k) / home ownership / pay yourself first automatically.",
+    "audience": "People who hate traditional budgeting and want a hands-off system.",
+    "total_pages": 260
+  },
+  {
+    "book_id": "book_the_barefoot_investor_the_only_scott_pape",
+    "title": "The Barefoot Investor",
+    "summary": "The Barefoot Investor by Scott Pape. Core Stance: Bucket account system (Blow, Mojo, Grow), zero debt, simple low-fee banking and superannuation.. Target Audience: Families and individuals wanting a simple, stress-free money plan..",
+    "topic_tags": [
+      "bucket system",
+      "banking",
+      "debt payoff",
+      "simple finance"
+    ],
+    "stance": "Bucket account system (Blow, Mojo, Grow), zero debt, simple low-fee banking and superannuation.",
+    "audience": "Families and individuals wanting a simple, stress-free money plan.",
+    "total_pages": 329
+  },
+  {
+    "book_id": "book_the_book_on_rental_property_inv_turner_brandon",
+    "title": "The Book on Rental Property Investing",
+    "summary": "The Book on Rental Property Investing by Brandon Turner. Core Stance: Real estate cashflow analysis, leverage, BRRRR strategy, tenant screening, scaling rental portfolios.. Target Audience: Real estate investors and landlords looking for income-generating property..",
+    "topic_tags": [
+      "real estate",
+      "rental properties",
+      "cashflow",
+      "leverage",
+      "BRRRR"
+    ],
+    "stance": "Real estate cashflow analysis, leverage, BRRRR strategy, tenant screening, scaling rental portfolios.",
+    "audience": "Real estate investors and landlords looking for income-generating property.",
+    "total_pages": 236
+  },
+  {
+    "book_id": "book_the_essays_of_warren_buffett_l_cunningham_lawrence_a_worldfreebooks_com",
+    "title": "The Essays of Warren Buffett",
+    "summary": "The Essays of Warren Buffett by Warren Buffett & Lawrence Cunningham. Core Stance: Corporate governance, moat-based value investing, capital allocation, long-term economic franchise value.. Target Audience: Business analysts, corporate managers, and deep value investors..",
+    "topic_tags": [
+      "corporate finance",
+      "value investing",
+      "moats",
+      "buffett",
+      "capital allocation"
+    ],
+    "stance": "Corporate governance, moat-based value investing, capital allocation, long-term economic franchise value.",
+    "audience": "Business analysts, corporate managers, and deep value investors.",
+    "total_pages": 329
+  },
+  {
+    "book_id": "book_the_index_card_why_personal_fi_helaine_olen",
+    "title": "The Index Card",
+    "summary": "The Index Card by Helaine Olen & Harold Pollack. Core Stance: Personal finance fits on a 3x5 index card: save 10-20%, pay credit cards in full, max 401(k), low-fee index funds, don't buy individual stocks.. Target Audience: Beginners overwhelmed by complex financial jargon..",
+    "topic_tags": [
+      "index card rules",
+      "simplicity",
+      "index funds",
+      "budgeting"
+    ],
+    "stance": "Personal finance fits on a 3x5 index card: save 10-20%, pay credit cards in full, max 401(k), low-fee index funds, don't buy individual stocks.",
+    "audience": "Beginners overwhelmed by complex financial jargon.",
+    "total_pages": 137
+  },
+  {
+    "book_id": "book_the_millionaire_next_door",
+    "title": "The Millionaire Next Door",
+    "summary": "The Millionaire Next Door by Thomas J. Stanley & William D. Danko. Core Stance: Frugality, living below means, PAWs (Prodigious Accumulators of Wealth) vs UAWs (Under Accumulators of Wealth).. Target Audience: People aiming to build real wealth rather than displaying high consumption..",
+    "topic_tags": [
+      "frugality",
+      "wealth research",
+      "lifestyle inflation",
+      "net worth"
+    ],
+    "stance": "Frugality, living below means, PAWs (Prodigious Accumulators of Wealth) vs UAWs (Under Accumulators of Wealth).",
+    "audience": "People aiming to build real wealth rather than displaying high consumption.",
+    "total_pages": 202
+  },
+  {
+    "book_id": "book_the_psychology_of_money_timele_morgan_housel",
+    "title": "The Psychology of Money",
+    "summary": "The Psychology of Money by Morgan Housel. Core Stance: Behavioral finance over mathematical optimization, freedom & peace of mind, tail events, staying rich vs getting rich.. Target Audience: Investors seeking to master emotional discipline and relationship with money..",
+    "topic_tags": [
+      "behavioral finance",
+      "mindset",
+      "risk management",
+      "compounding"
+    ],
+    "stance": "Behavioral finance over mathematical optimization, freedom & peace of mind, tail events, staying rich vs getting rich.",
+    "audience": "Investors seeking to master emotional discipline and relationship with money.",
+    "total_pages": 220
+  },
+  {
+    "book_id": "book_the_science_of_getting_rich_wallace_d__wattles_worldfreebooks_com",
+    "title": "The Science of Getting Rich",
+    "summary": "The Science of Getting Rich by Wallace D. Wattles. Core Stance: Creation over competition, positive mental attitude, gratitude, focused thought to manifest wealth.. Target Audience: Readers interested in classical mindset and thought-laws of prosperity..",
+    "topic_tags": [
+      "mindset",
+      "classics",
+      "philosophy of wealth"
+    ],
+    "stance": "Creation over competition, positive mental attitude, gratitude, focused thought to manifest wealth.",
+    "audience": "Readers interested in classical mindset and thought-laws of prosperity.",
+    "total_pages": 110
+  },
+  {
+    "book_id": "book_the_simple_path_to_wealth_your_j_collins_worldfreebooks_com",
+    "title": "The Simple Path to Wealth",
+    "summary": "The Simple Path to Wealth by JL Collins. Core Stance: F-You Money, VTSAX (total stock market index), zero debt, high savings rate, simple stress-free wealth accumulation.. Target Audience: Anyone seeking the simplest, most effective path to financial independence..",
+    "topic_tags": [
+      "index funds",
+      "FIRE",
+      "VTSAX",
+      "simplicity",
+      "retirement"
+    ],
+    "stance": "F-You Money, VTSAX (total stock market index), zero debt, high savings rate, simple stress-free wealth accumulation.",
+    "audience": "Anyone seeking the simplest, most effective path to financial independence.",
+    "total_pages": 239
+  },
+  {
+    "book_id": "book_the_total_money_makeover_a_pro_dave_ramsey_worldfreebooks_com",
+    "title": "The Total Money Makeover",
+    "summary": "The Total Money Makeover by Dave Ramsey. Core Stance: Strict anti-debt (Debt Snowball method), 7 Baby Steps, cash envelope system, emergency fund, zero credit card usage.. Target Audience: Individuals getting out of consumer debt and seeking strict financial discipline..",
+    "topic_tags": [
+      "debt snowball",
+      "anti-debt",
+      "baby steps",
+      "emergency fund",
+      "budgeting"
+    ],
+    "stance": "Strict anti-debt (Debt Snowball method), 7 Baby Steps, cash envelope system, emergency fund, zero credit card usage.",
+    "audience": "Individuals getting out of consumer debt and seeking strict financial discipline.",
+    "total_pages": 334
+  },
+  {
+    "book_id": "book_the_wealthy_barber_returns_david_chilton",
+    "title": "The Wealthy Barber Returns",
+    "summary": "The Wealthy Barber Returns by David Chilton. Core Stance: Humorous personal finance commonsense, curbing impulse spending, living within limits, pay yourself first.. Target Audience: General readers seeking practical, lighthearted money guidance..",
+    "topic_tags": [
+      "saving",
+      "behavioral finance",
+      "common sense",
+      "budgeting"
+    ],
+    "stance": "Humorous personal finance commonsense, curbing impulse spending, living within limits, pay yourself first.",
+    "audience": "General readers seeking practical, lighthearted money guidance.",
+    "total_pages": 207
+  },
+  {
+    "book_id": "book_the_intelligent_investor",
+    "title": "The Intelligent Investor",
+    "summary": "The Intelligent Investor by Benjamin Graham. Core Stance: Value investing, margin of safety, Mr. Market emotional discipline, defensive vs enterprising investor distinction.. Target Audience: Serious stock market investors seeking fundamental security analysis..",
+    "topic_tags": [
+      "value investing",
+      "margin of safety",
+      "stock analysis",
+      "behavioral finance"
+    ],
+    "stance": "Value investing, margin of safety, Mr. Market emotional discipline, defensive vs enterprising investor distinction.",
+    "audience": "Serious stock market investors seeking fundamental security analysis.",
+    "total_pages": 641
+  },
+  {
+    "book_id": "book_the_warren_buffett_way",
+    "title": "The Warren Buffett Way",
+    "summary": "The Warren Buffett Way by Robert G. Hagstrom. Core Stance: Business orientation to stock buying, circle of competence, management quality, intrinsic value calculation.. Target Audience: Investors wishing to emulate Warren Buffett's investment methodology..",
+    "topic_tags": [
+      "buffett",
+      "value investing",
+      "intrinsic value",
+      "stock analysis"
+    ],
+    "stance": "Business orientation to stock buying, circle of competence, management quality, intrinsic value calculation.",
+    "audience": "Investors wishing to emulate Warren Buffett's investment methodology.",
+    "total_pages": 267
+  },
+  {
+    "book_id": "book_think_and_grow_rich_napoleon_hill",
+    "title": "Think and Grow Rich",
+    "summary": "Think and Grow Rich by Napoleon Hill. Core Stance: Definiteness of purpose, mastermind alliance, autosuggestion, persistence, converting desire into financial reality.. Target Audience: Entrepreneurs and goal-oriented individuals aiming for success..",
+    "topic_tags": [
+      "mindset",
+      "mastermind",
+      "personal growth",
+      "classics"
+    ],
+    "stance": "Definiteness of purpose, mastermind alliance, autosuggestion, persistence, converting desire into financial reality.",
+    "audience": "Entrepreneurs and goal-oriented individuals aiming for success.",
+    "total_pages": 253
+  },
+  {
+    "book_id": "book_your_money_or_your_life_9_step_robin_vicki_worldfreebooks_com",
+    "title": "Your Money or Your Life",
+    "summary": "Your Money or Your Life by Vicki Robin & Joe Dominguez. Core Stance: Money is life energy, calculating true hourly wage, radical frugality, crossover point where investment income covers expenses.. Target Audience: People evaluating the tradeoff between work, time, and money..",
+    "topic_tags": [
+      "life energy",
+      "frugality",
+      "FIRE pioneer",
+      "crossover point",
+      "mindful spending"
+    ],
+    "stance": "Money is life energy, calculating true hourly wage, radical frugality, crossover point where investment income covers expenses.",
+    "audience": "People evaluating the tradeoff between work, time, and money.",
+    "total_pages": 288
+  },
+  {
+    "book_id": "book__taylor_larimore__mel_lindauer__michael_leboeuf_",
+    "title": "The Bogleheads' Guide to Investing",
+    "summary": "The Bogleheads' Guide to Investing by Taylor Larimore, Mel Lindauer, Michael LeBoeuf. Core Stance: Boglehead principles: asset allocation, diversification, low-cost index funds, tax-efficiency, avoiding market timing.. Target Audience: Disciplined passive index investors seeking systematic portfolio construction..",
+    "topic_tags": [
+      "bogleheads",
+      "asset allocation",
+      "tax efficiency",
+      "index funds"
+    ],
+    "stance": "Boglehead principles: asset allocation, diversification, low-cost index funds, tax-efficiency, avoiding market timing.",
+    "audience": "Disciplined passive index investors seeking systematic portfolio construction.",
+    "total_pages": 334
+  }
+]
