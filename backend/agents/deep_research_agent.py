@@ -51,7 +51,12 @@ class DeepResearchAgent:
         self.tavily_tool = TavilySearchTool()
 
     async def run_stream(
-        self, user_query: str, skip_vagueness: bool = True, use_books: bool = False
+        self,
+        user_query: str,
+        skip_vagueness: bool = True,
+        use_books: bool = False,
+        conversation_history: Optional[List[Dict[str, Any]]] = None,
+        user_profile: Optional[str] = None,
     ) -> AsyncGenerator[Dict[str, Any], None]:
         if not skip_vagueness:
             # Offload blocking LLM call to thread pool
@@ -156,7 +161,12 @@ class DeepResearchAgent:
 
         # Step 3: Stream Deep Report in proper paragraph format
         yield {"event": "status", "message": "Step 3: Synthesizing report in proper paragraph format..."}
-        async for chunk_text in self._stream_deep_report(user_query, research_results):
+        async for chunk_text in self._stream_deep_report(
+            user_query,
+            research_results,
+            conversation_history=conversation_history or [],
+            user_profile=user_profile or "",
+        ):
             yield {"event": "answer_chunk", "chunk": chunk_text}
 
         yield {"event": "done"}
@@ -181,7 +191,11 @@ Return STRICTLY a JSON array of strings:
         ]
 
     async def _stream_deep_report(
-        self, query: str, research_results: List[Dict[str, Any]]
+        self,
+        query: str,
+        research_results: List[Dict[str, Any]],
+        conversation_history: Optional[List[Dict[str, Any]]] = None,
+        user_profile: Optional[str] = None,
     ) -> AsyncGenerator[str, None]:
         sections_content = ""
         for idx, res in enumerate(research_results, 1):
@@ -205,23 +219,42 @@ Return STRICTLY a JSON array of strings:
         max_chars = settings.TOKEN_BUDGET_ANSWER_SYNTHESIS * 4
         sections_content = sections_content[:max_chars]
 
-        prompt = f"""You are a Senior Financial Analyst producing a Deep Research Report. Answer the user's question DIRECTLY with expert depth.
+        # Build memory context blocks
+        history_section = ""
+        if conversation_history:
+            recent = (conversation_history or [])[-6:]
+            history_text = "\n".join(
+                f"{t['role'].upper()}: {t['content'][:300]}" for t in recent
+            )
+            if history_text.strip():
+                history_section = (
+                    f"\n\n--- CONVERSATION HISTORY ---\n{history_text}\n---"
+                )
 
-CRITICAL RULES:
-1. Answer the EXACT research question asked. Stay precisely on topic.
-2. Write in clear, well-developed PARAGRAPHS with ## markdown section headings.
-3. Each paragraph: 3-5 substantive sentences — analytical and thorough, no bullet-point lists.
-4. Use the research findings below ONLY where they are directly relevant to the specific question. Discard off-topic content.
-5. If research findings are not relevant to a section, draw on your own expert knowledge.
-6. DO NOT mention sources, book titles, author names, page numbers, or citations anywhere.
-7. End with a ## Executive Summary & Conclusion of 3-4 strong paragraphs distilling all key insights.
+        profile_section = ""
+        if user_profile and user_profile.strip() and user_profile.strip() != "No profile data yet.":
+            profile_section = (
+                f"\n\n--- USER FINANCIAL PROFILE ---\n{user_profile[:400]}\n---"
+            )
 
-User Research Request: "{query}"
+        prompt = f"""You are a Senior Financial Analyst producing a research report. Answer the user's question with expert depth.
+
+RULES:
+1. Answer the EXACT question asked. Stay on topic.
+2. Use the Conversation History and User Financial Profile (if provided) to personalise your analysis.
+3. Use ## markdown headings to organise sections. Write in clear paragraphs — length should match the complexity of each point.
+4. Use the research findings only where directly relevant. Discard off-topic content.
+5. Do NOT mention sources, book titles, author names, page numbers, or citations.
+6. End with a ## Summary distilling the key takeaways (length proportional to the report).
+
+User Question: "{query}"
+{profile_section}
+{history_section}
 
 Research Findings (use only what is directly relevant):
 {sections_content}
 
-Write a comprehensive, on-topic research report:
+Write the report:
 """
 
         # ── Execute API call to LLM with fallback support ────────────────────

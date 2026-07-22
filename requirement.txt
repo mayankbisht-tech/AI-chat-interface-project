@@ -6,3 +6,10 @@ python-dotenv
 langchain-google-genai
 langgraph
 langsmith
+asyncpg>=0.30.0
+fastapi
+uvicorn[standard]
+pydantic-settings
+pymupdf
+sentence-transformers
+tavily-python

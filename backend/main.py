@@ -12,6 +12,8 @@ from backend.config import settings
 from backend.ingestion.storage import CorpusStorage
 from backend.agents.normal_agent import NormalAgent
 from backend.agents.deep_research_agent import DeepResearchAgent
+from backend.memory.memory_manager import MemoryManager
+from backend.guardrails.guardrails import check as guardrails_check
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
@@ -31,6 +33,13 @@ app.add_middleware(
 )
 
 storage = CorpusStorage()
+memory_manager = MemoryManager()
+
+
+@app.on_event("startup")
+async def startup_event():
+    await memory_manager.init()
+    logger.info("[Startup] MemoryManager initialised.")
 
 # ── LLM Client Factory ─────────────────────────────────────────────────────────
 
@@ -206,6 +215,7 @@ class ChatRequest(BaseModel):
     mode: str = "normal"
     skip_vagueness: bool = True
     use_books: bool = False
+    session_id: str = "default"  # unique per browser tab / conversation
 
 
 class ConfigUpdateRequest(BaseModel):
@@ -370,12 +380,23 @@ def ingestion_status():
 async def chat_endpoint(req: ChatRequest):
     """
     Streaming SSE endpoint for real-time progressive response rendering.
-    Each yielded line is: data: <JSON>\n\n
+    Each yielded line is: data: <JSON>\\n\\n
     Events: status | clarification | traversal | sources | answer_chunk | done | error
+
+    Memory: short-term (last 10 turns) + long-term (LLM-summarised user profile)
+    Guardrails: hard-blocked topics + off-topic soft redirect
     """
     llm_client = get_llm_client()
+    session_id = req.session_id or "default"
 
     async def event_generator():
+        # ── Guardrails check (fast, no LLM call) ──────────────────────────
+        is_blocked, block_msg = guardrails_check(req.query)
+        if is_blocked:
+            yield f"data: {json.dumps({'event': 'answer_chunk', 'chunk': block_msg})}\n\n"
+            yield f"data: {json.dumps({'event': 'done'})}\n\n"
+            return
+
         yield f"data: {json.dumps({'event': 'status', 'message': f'Initializing {req.mode.upper()} Agent...'})}\n\n"
         await asyncio.sleep(0.05)
 
@@ -392,6 +413,15 @@ async def chat_endpoint(req: ChatRequest):
             yield f"data: {json.dumps({'event': 'done'})}\n\n"
             return
 
+        # ── Load memory ────────────────────────────────────────────────────
+        conversation_history = await memory_manager.get_short_term(session_id)
+        user_profile = await memory_manager.get_long_term(session_id)
+
+        # Persist the user's turn immediately
+        await memory_manager.add_turn(session_id, "user", req.query)
+
+        full_assistant_response = []
+
         try:
             if req.mode == "deep_research":
                 agent = DeepResearchAgent(storage, llm_client)
@@ -402,7 +432,12 @@ async def chat_endpoint(req: ChatRequest):
                 req.query,
                 skip_vagueness=req.skip_vagueness,
                 use_books=req.use_books,
+                conversation_history=conversation_history,
+                user_profile=user_profile,
             ):
+                # Collect assistant text for memory storage
+                if item.get("event") == "answer_chunk":
+                    full_assistant_response.append(item.get("chunk", ""))
                 yield f"data: {json.dumps(item)}\n\n"
                 await asyncio.sleep(0.01)
 
@@ -410,15 +445,32 @@ async def chat_endpoint(req: ChatRequest):
             logger.error(f"Chat endpoint error: {e}", exc_info=True)
             yield f"data: {json.dumps({'event': 'error', 'message': str(e)})}\n\n"
             yield f"data: {json.dumps({'event': 'done'})}\n\n"
+            return
+
+        # ── Persist assistant turn + maybe update long-term memory ─────────
+        if full_assistant_response:
+            assistant_text = "".join(full_assistant_response)
+            await memory_manager.add_turn(session_id, "assistant", assistant_text[:1500])
+            # Non-blocking: update long-term profile if threshold reached
+            asyncio.create_task(
+                memory_manager.maybe_update_long_term(session_id, llm_client)
+            )
 
     return StreamingResponse(
         event_generator(),
         media_type="text/event-stream",
         headers={
             "Cache-Control": "no-cache",
-            "X-Accel-Buffering": "no",  # Disable Nginx buffering for streaming
+            "X-Accel-Buffering": "no",
         },
     )
+
+
+@app.delete("/api/memory/{session_id}")
+async def clear_memory(session_id: str):
+    """Clear short-term memory for a session (e.g. 'New Chat' button)."""
+    await memory_manager.clear_session(session_id)
+    return {"status": "cleared", "session_id": session_id}
 
 
 if __name__ == "__main__":

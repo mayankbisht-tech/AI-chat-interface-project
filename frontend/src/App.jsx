@@ -5,7 +5,18 @@ import TraversalVisualizer from './components/TraversalVisualizer'
 import SourceInspector from './components/SourceInspector'
 import CorpusModal from './components/CorpusModal'
 import ConfigPanel from './components/ConfigPanel'
-import { Send, RefreshCw } from 'lucide-react'
+import { Send, RefreshCw, PlusCircle } from 'lucide-react'
+
+// Generate a stable session ID per browser tab
+function makeSessionId() {
+  const stored = sessionStorage.getItem('fin_session_id')
+  if (stored) return stored
+  const id = `sess_${Date.now()}_${Math.random().toString(36).slice(2, 8)}`
+  sessionStorage.setItem('fin_session_id', id)
+  return id
+}
+
+const SESSION_ID = makeSessionId()
 
 const WELCOME_MSG = {
   id: 1,
@@ -66,6 +77,23 @@ export default function App() {
     }
   }
 
+  const handleNewChat = async () => {
+    // Clear backend memory for this session
+    try {
+      await fetch(`/api/memory/${SESSION_ID}`, { method: 'DELETE' })
+    } catch (e) {
+      console.warn('Memory clear failed:', e)
+    }
+    // Reset UI
+    setMessages([WELCOME_MSG])
+    setCandidateBooks([])
+    setTraversalTrace([])
+    setBookSources([])
+    setWebSources([])
+    setInput('')
+    setStatusMessage('')
+  }
+
   const handleSend = async (queryText = input, skipVagueness = false) => {
     if (!queryText.trim() || isLoading) return
 
@@ -93,6 +121,7 @@ export default function App() {
           mode: agentMode,
           skip_vagueness: true,
           use_books: useBooks,
+          session_id: SESSION_ID,
         }),
       })
 
@@ -295,6 +324,16 @@ export default function App() {
               className="input-form"
               onSubmit={e => { e.preventDefault(); handleSend() }}
             >
+              <button
+                type="button"
+                className="new-chat-btn"
+                onClick={handleNewChat}
+                title="Start a new conversation (clears memory)"
+                aria-label="New chat"
+              >
+                <PlusCircle size={16} />
+                <span>New Chat</span>
+              </button>
               <input
                 id="chat-input"
                 className={`chat-input${isDeepMode ? ' deep-mode' : ''}`}

@@ -1105,3 +1105,29 @@ body {
   .side-panel { display: none; }
   .config-panel { width: 100%; }
 }
+
+/* ── New Chat Button ─────────────────────────────────────────────────────── */
+.new-chat-btn {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  background: var(--bg-glass);
+  border: 1px solid var(--border-glass);
+  border-radius: var(--radius-sm);
+  color: var(--text-muted);
+  font-family: var(--font-family);
+  font-size: 0.76rem;
+  font-weight: 600;
+  padding: 6px 10px;
+  cursor: pointer;
+  transition: all 0.2s;
+  white-space: nowrap;
+  flex-shrink: 0;
+  margin-right: 8px;
+}
+
+.new-chat-btn:hover {
+  background: var(--bg-glass-hover);
+  color: var(--text-main);
+  border-color: rgba(56, 189, 248, 0.3);
+}
